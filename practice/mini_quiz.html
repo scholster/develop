@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>queskey</title>
+        <link rel="stylesheet" href="/assets/css/style.css" media="screen" />
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <meta property="og:title" content="queskey"/>
+        <meta property="og:image" content="http://sphotos-a.ak.fbcdn.net/hphotos-ak-prn1/72671_554366534608562_503161730_n.jpg"/>
+        <meta property="og:site_name" content="queskey"/>
+        <meta property="og:description" content="Begin your CAT preparation."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://queskey.com"/>
+        <link rel="shortcut icon" href="queskey.ico" />
+        <script>
+
+            $(document).ready(function() {
+
+                window.onresize = function(event) {
+
+
+                    var wrap_width = $('#quiz_result_content').css("width");
+                    var wrap_width_int = parseInt(wrap_width);
+                    wrap_width_int = wrap_width_int / 2;
+                    $('#quiz_ansers').css('width', wrap_width_int - 70);
+                    $('.quiz_list_ques_text').css('width', wrap_width_int - 190);
+
+
+
+                    $('.resultActivityFooter').css('width', wrap_width_int - 400);
+
+
+
+                    var window_height = $(window).height();
+                    var window_height_int = parseInt(window_height);
+                    $('.inner_wrapper_result').css('height', window_height_int - 100);
+                    $('.quiz_result_container').css('height', window_height_int - 180);
+                    $('.quiz_result_container_last').css('height', window_height_int - 180);
+
+
+                    var result_summary_table_width = $('.result_summary_table').width();
+                    var result_summary_table_width_int = parseInt(result_summary_table_width);
+                    var result_option_content_width = result_summary_table_width_int - 257;
+                    $('.result_option_content').css('width', result_option_content_width);
+
+
+                    var queskey_post_width = $('#queskey_post').width();
+                    var queskey_post_width_int = parseInt(queskey_post_width);
+                    var queskeyPostText_width = queskey_post_width_int - 150;
+                    $('.queskeyPostText').css('width', queskeyPostText_width);
+
+                    var queskey_anser_width = $('#result_sol_table').width();
+                    var queskey_anser_width_int = parseInt(queskey_anser_width);
+                    var postSolnText_width = queskey_post_width_int - 190;
+                    $('.postSolnText').css('width', queskeyPostText_width);
+
+                }
+
+
+                var wrap_width = $('#quiz_result_content').css("width");
+                var wrap_width_int = parseInt(wrap_width);
+                wrap_width_int = wrap_width_int / 2;
+                $('#quiz_ansers').css('width', wrap_width_int - 70);
+                $('.quiz_list_ques_text').css('width', wrap_width_int - 190);
+
+                $('.resultActivityFooter').css('width', wrap_width_int - 400);
+
+
+
+
+                var window_height = $(window).height();
+                var window_height_int = parseInt(window_height);
+                $('.inner_wrapper_result').css('height', window_height_int - 100);
+                $('.quiz_result_container').css('height', window_height_int - 180);
+                $('.quiz_result_container_last').css('height', window_height_int - 180);
+
+
+                var result_summary_table_width = $('.result_summary_table').width();
+                var result_summary_table_width_int = parseInt(result_summary_table_width);
+                var result_option_content_width = result_summary_table_width_int - 257;
+                $('.result_option_content').css('width', result_option_content_width);
+
+
+                var queskey_post_width = $('#queskey_post').width();
+                var queskey_post_width_int = parseInt(queskey_post_width);
+                var queskeyPostText_width = queskey_post_width_int - 150;
+                $('.queskeyPostText').css('width', queskeyPostText_width);
+
+                var queskey_anser_width = $('#result_sol_table').width();
+                var queskey_anser_width_int = parseInt(queskey_anser_width);
+                var postSolnText_width = queskey_post_width_int - 190;
+                $('.postSolnText').css('width', queskeyPostText_width);
+
+
+                /*
+                 var window_width= $(window).width(); 
+                 var window_width_int = parseInt(window_width);
+                 window_width_int=window_width_int-144-70;
+         
+                 if(window_width_int>750)//750 is the minimum width to avoid distortion
+                 {
+                 $('.inner_wrapper_quiz').css('width', window_width_int);
+         
+                 $('#mini_prof_quiz').css('width', window_width_int);
+         
+         
+                 var wrap_width = $('.inner_wrapper_quiz').css("width");
+                 var wrap_width_int = parseInt(wrap_width);
+         
+                 var head_width= wrap_width_int - 30;// 30 is the border of the header
+                 $('.page_header_back_quiz').css('width', head_width);
+                 $('.quiz_ques_container').css('width', head_width); 
+         
+                 $('#quiz_footer').css('width',head_width); 
+         
+                 $('#quiz_navlist').css('width', head_width - parseInt($('#quiz_next').css("width")) - parseInt($('#quiz_prev').css("width"))); 
+         
+         
+                 }
+         
+         
+         
+         
+                 //$('span.quiz_option_icon').css('height',h);
+         
+         
+                 */
+
+
+            });
+
+
+        </script>
+    </head>
+
+    <body class="quiz_body">
+        <div id="nav">
+            <div id="nav_line"></div>
+            <div id="queskey_logo"><img src="img/queskey_logo.png" alt="queskey" /></div>
+            <div id="user_pic" style="background-image:url(img/dp.jpg)"></div>
+            <div id="navBtn_content"></div>
+            <div id="navBtn_practice"></div>
+            <div id="navBtn_analytics"></div>
+            <div id="navBtn_doubt"></div>
+        </div>
+        <div id="quiz_content2">
+            <div id="mini_prof_quiz">
+                <div id="user_name_quiz">Hitten Dubey</div>
+            </div>
+        </div>
+        <div id="quiz_result_content">
+            <div class="inner_wrapper_result">
+                <div class="page_header_back_quiz">Quant Quiz</div>
+                <div class="quiz_result_container">
+                    <ul id="quiz_ansers">
+                        <li class="quiz_list_question">
+                            <table cellpadding="10">
+                                <tr>
+                                    <td class="ques_wrong_icon" width="8%"></td>
+                                    <td class="quiz_list_ques_no" width="50px"> Q1</td>
+                                    <td class="quiz_list_ques_text" ><p align="justify"> A building lot in a city is shaped as a  30(degrees), -60, -90 triangle. These side opposite the 30 angle measures 41 ft atnd is A building lot in a city is svzhaped as a  30(degrees), -60, -90 triatngle. These side opposite the 30 angle measures 41 ft .</p></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="quiz_list_question">
+                            <table cellpadding="10">
+                                <tr>
+                                    <td class="ques_wrong_icon" width="8%"></td>
+                                    <td class="quiz_list_ques_no" width="50px"> Q1</td>
+                                    <td class="quiz_list_ques_text" ><p align="justify"> A building lot in a city is shaped as a  30(degrees), -60, -90 triangle. These side opposite the 30 angle measures 41 ft atnd is A building lot in a city is svzhaped as a  30(degrees), -60, -90 triatngle. These side opposite the 30 angle measures 41 ft .</p></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="quiz_list_question">
+                            <table cellpadding="10">
+                                <tr>
+                                    <td class="ques_wrong_icon" width="8%"></td>
+                                    <td class="quiz_list_ques_no" width="50px"> Q1</td>
+                                    <td class="quiz_list_ques_text" ><p align="justify"> A building lot in a city is shaped as a  30(degrees), -60, -90 triangle. These side opposite the 30 angle measures 41 ft atnd is A building lot in a city is svzhaped as a  30(degrees), -60, -90 triatngle. These side opposite the 30 angle measures 41 ft A building lot in a city is shaped as a  30(degrees), -60, -90 triangle. These side opposite the 30 angle measures 41 ft atnd is A building lot in a city is svzhaped as a  30(degrees), -60, -90 triatngle. These side opposite the 30 angle measures 41 ft .</p></td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </div>
+                <div class="quiz_result_container_last">
+                    <div class="quiz_result_right">
+                        <div class="result_summary_head">summary</div>
+                        <table class="result_summary_table"  width="100%">
+                            <tr>
+                                <td class="quiz_list_option_icon_default" width="25px"  ></td>
+                                <td class="result_option_sno" width="32px">A.</td>
+                                <td class="result_option_content" >1</td>
+                                <td class="result_option_comment" width="200px">Correct Option</td>
+                            </tr>
+                            <tr>
+                                <td class="quiz_list_option_icon_default" width="25px"  ></td>
+                                <td class="result_option_sno" width="32px">B.</td>
+                                <td class="result_option_content" >2</td>
+                                <td class="result_option_comment" width="200px">Correct Option</td>
+                            </tr>
+                            <tr>
+                                <td class="quiz_list_option_icon_default" width="25px"  ></td>
+                                <td class="result_option_sno" width="32px">C.</td>
+                                <td class="result_option_content" >3</td>
+                                <td class="result_option_comment" width="200px">Correct Option</td>
+                            </tr>
+                            <tr>
+                                <td class="quiz_list_option_icon_default" width="25px"  ></td>
+                                <td class="result_option_sno" width="32px">D.</td>
+                                <td class="result_option_content" >4</td>
+                                <td class="result_option_comment" width="200px">Correct Option</td>
+                            </tr>
+                        </table>
+                        <table class="result_pace_table" width="100%">
+                            <tr>
+                                <td class="result_your_pace_icon"></td>
+                                <td><p class="result_pace_main">0.02</p>
+                                    <p class="result_pace_subhead">Your pace</p></td>
+                                <td class="result_avg_pace_icon"></td>
+                                <td><p class="result_pace_main">0.02</p>
+                                    <p class="result_pace_subhead">Community pace</p></td>
+                                <td class="result_sub_icon"></td>
+                                <td ><p class="result_pace_subhead" >Revise Topic</p>
+                                    <p class="result_subject_name">Number Systems</p></td>
+                            </tr>
+                        </table>
+                        <div class="result_summary_head" style="margin-top:40px">solution</div>
+                        <div id="queskey_post">
+                            <div class="dashPostBox">
+                                <textarea name="question" class="queskeyPostText" placeholder="Whats on your mind" onfocus="//extraPostBox();" onclick=""></textarea>
+                                <input class="queskeyPostButton" type="submit" value="Post">
+                            </div>
+                        </div>
+                        <table class="result_sol_table" width="100%">
+                            <tr class="queskey_anser">
+                                <td class="postSolnLeft" width="68px"><a href="/?view=alex"><img class="other_user_image" src="http://hyphos.in/images/da1434eb-f5f5-4f04-80da-9a2a3f04ca83_t.jpg"></a></td>
+                                <td class="postSolnText" ><p><span class="resultActivityText">Ankit</span>
+                                        <br/> Permutation and Combinations </p>
+                                </td>
+
+                                <td width="85px"><div class="like_soln_btn" >
+                                        Like
+                                    </div>
+
+
+                                </td>
+                            </tr>
+
+
+
+                            <tr class="best_anser">
+                                <td class="postSolnLeft" width="68px"><a href="/?view=alex"><img class="other_user_image" src="http://hyphos.in/images/da1434eb-f5f5-4f04-80da-9a2a3f04ca83_t.jpg"></a></td>
+                                <td class="postSolnText" ><p><span class="resultActivityText">Ankit</span>
+                                        <br/> Permutation and Combinations </p>
+                                </td>
+
+                                <td width="85px"><div class="like_soln_btn" >
+                                        Unlike
+                                    </div>
+                                    <div class="soln_like">+28</div>
+
+
+                                </td>
+                            </tr>
+                            <tr class="other_usr_anser">
+                                <td class="postSolnLeft" width="68px"><a href="/?view=alex"><img class="other_user_image" src="http://hyphos.in/images/da1434eb-f5f5-4f04-80da-9a2a3f04ca83_t.jpg"></a></td>
+                                <td class="postSolnText" ><p><span class="resultActivityText">Ankit</span>
+                                        <br/> Permutation and Combinations </p>
+                                </td>
+
+                                <td width="85px"><div class="like_soln_btn" >
+                                        Like
+                                    </div>
+
+
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

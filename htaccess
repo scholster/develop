@@ -1,0 +1,146 @@
+RewriteEngine On
+
+RewriteRule ^(fblogin)(.*)$ fbLogin.php
+RewriteRule ^(ajax)/(userEmail)$ ajax/userEmail.php
+RewriteRule ^(ajax)/(userLogin)$ ajax/userLogin.php
+RewriteRule ^startQuiz$ practice/startQuiz2.php
+RewriteRule ^registration$ ajax/register.php
+RewriteRule ^validationCheck$ ajax/checkUsername.php
+RewriteRule ^(user)/([0-9]+)[/]?$ profile/index.php?id=$2
+RewriteRule ^(content)/([a-zA-Z&-]+)[/]?$ content/index.php?subject=$2
+RewriteRule ^(content)/([a-zA-Z&-]+)/([a-z0-9A-Z-]+)[/]?$ content/index.php?subject=$2&topic=$3
+RewriteRule ^(content)/([a-zA-Z&-]+)/([a-z0-9A-Z-]+)/([a-z0-9A-Z-]+)[/]?$ content/index.php?subject=$2&topic=$3&subTopic=$4
+RewriteRule ^(analytics)/([a-zA-Z&-]+)[/]?$ analytics/index.php?subject=$2
+RewriteRule ^(practice)/([1-3]+)[/]?$ practice/startQuiz2.php?subject=$2
+RewriteRule ^(practice)/([a-zA-Z&-]+)[/]?$ practice/index.php?subject=$2
+RewriteRule ^(practice)/([1-3]+)/([0-9]+)[/]?$ practice/index.php?quizType=$2&quizId=$3
+RewriteRule ^(practice)/(custom)/([0-9]+)[/]?$ practice/index.php?quizType=custom&quizId=$3
+RewriteRule ^(practice)/([3]+)/([0-9]+)/([0-9]+)[/]?$ practice/index.php?quizType=$2&quizId=$3&q=$4
+RewriteRule ^(practice)/(4)/([0-9]+)/([0-9]+)[/]?$ practice/index.php?quizType=4&questions=$3&time=$4
+RewriteRule ^resetPassword$ passwordReset.php
+RewriteRule ^about$ about.php
+RewriteRule ^contact$ contact.php
+RewriteRule ^disclaimer$ disclaimer.php
+
+AddDefaultCharset UTF-8
+
+
+# ------------------------------------------------------------------------------
+# | Proper MIME types for all files                                            |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_mime.c>
+
+  # JavaScript
+    # Normalize to standard type (it's sniffed in IE anyways):
+    AddType application/javascript                      js jsonp
+    AddType application/json                            json
+
+  # Web fonts
+    AddType application/font-woff                       woff
+    AddType application/vnd.ms-fontobject               eot
+
+    # Browsers usually ignore the font MIME types and sniff the content,
+    # however, Chrome shows a warning if other MIME types are used for the
+    # following fonts.
+    AddType application/x-font-ttf                      ttc ttf
+    AddType font/opentype                               otf
+
+    # Make SVGZ fonts work on iPad:
+    AddType     image/svg+xml                           svg svgz
+    AddEncoding gzip                                    svgz
+
+  # Other
+    AddType application/octet-stream                    safariextz
+    AddType application/x-chrome-extension              crx
+    AddType application/x-opera-extension               oex
+    AddType application/x-shockwave-flash               swf
+    AddType application/x-web-app-manifest+json         webapp
+    AddType application/x-xpinstall                     xpi
+    AddType application/xml                             atom rdf rss xml
+    AddType image/webp                                  webp
+    AddType image/x-icon                                ico
+    AddType text/cache-manifest                         appcache manifest
+    AddType text/vtt                                    vtt
+    AddType text/x-component                            htc
+    AddType text/x-vcard                                vcf
+
+</IfModule>
+
+
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+
+FileETag None
+
+# catche control
+
+<IfModule mod_expires.c>
+
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 month"
+
+  # CSS
+    ExpiresByType text/css                              "access plus 1 year"
+
+  # Data interchange
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+  # Favicon (cannot be renamed!)
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+  # HTML components (HTCs)
+    ExpiresByType text/x-component                      "access plus 1 month"
+
+  # HTML
+    ExpiresByType text/html                             "access plus 0 seconds"
+
+  # JavaScript
+    ExpiresByType application/javascript                "access plus 1 week"
+
+  # Manifest files
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+  # Web feeds
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+  # Web fonts
+    ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+    ExpiresByType application/x-font-ttf                "access plus 1 month"
+    ExpiresByType font/opentype                         "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+
+</IfModule>
+
+<filesMatch "\.(gif|jpg|png)$">
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  Header append Cache-Control "public"
+</filesMatch>
+
+Options -Indexes
+
+#Protect the .htaccess File
+<files '.htaccess'>
+order allow,deny
+deny from all
+</files>
+
+<files 'dashboard.php'>
+order allow,deny
+deny from all
+</files>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript application/json
+</IfModule>
+
+ErrorDocument 404 /notfound.html
+ErrorDocument 403 /notfound.html
+ErrorDocument 500 /notfound.html
