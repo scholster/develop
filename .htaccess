@@ -116,13 +116,13 @@ FileETag None
     ExpiresByType font/opentype                         "access plus 1 month"
     ExpiresByType image/svg+xml                         "access plus 1 month"
 
-</IfModule>
-
 <filesMatch "\.(gif|jpg|png)$">
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
   Header append Cache-Control "public"
 </filesMatch>
+
+</IfModule>
 
 Options -Indexes
 
