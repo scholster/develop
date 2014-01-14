@@ -14,6 +14,7 @@
 
 
 <?php
+$login = new LoginController();
 if (!$login->loggedIn) {
     ?>
     <div id="sign_in" class="login_box">
