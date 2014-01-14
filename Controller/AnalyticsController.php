@@ -145,6 +145,7 @@ class AnalyticsController {
         if ($this->attempted > 0) {
             if ($analytics)
                 foreach ($analytics as $analytic) {
+                try{
                     $topicId = $analytic['topicId'];
                     $communityAnalytic = $communityAnalytics[$topicId];
                     $this->detailedAnalytics[$i]['topic'] = $analytic['topic'];
@@ -154,6 +155,8 @@ class AnalyticsController {
                     $this->detailedAnalytics[$i]['communityAccuracy'] = floor(($communityAnalytic['correct'] * 100) / $communityAnalytic['total']);
                     $this->detailedAnalytics[$i]['avgTime'] = $analytic['totalTime'] / $analytic['total'];
                     $this->detailedAnalytics[$i]['commAvgTime'] = $communityAnalytic['totalTime'] / $communityAnalytic['total'];
+                }
+                catch(Exception $e){};
                     $i++;
                 }
         }
