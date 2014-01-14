@@ -176,10 +176,10 @@ class UserDetailsController {
 
     public function calculateSmartScore() {
         $smartScore = 0;
-        if ($this->stats['1']) {
+        if (isset($this->stats['1'])) {
             $smartScore = $smartScore + (($this->stats['1']['done'] / 14) * 10);
         }
-        if ($this->stats['3']) {
+        if (isset($this->stats['3'])) {
             $smartScore = $smartScore + $this->stats['3']['done'];
         }
         if ($this->quantAnalytics->attempted == 1000) {
